@@ -11,3 +11,22 @@ fn main() {
     let n = 10;
     println!("fib({n}) = {}", fib(n));
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_base_cases() {
+        assert_eq!(fib(0), 0);
+        assert_eq!(fib(1), 1);
+    }
+
+    #[test]
+    fn test_sequence() {
+        let expected = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34];
+        for (n, &val) in expected.iter().enumerate() {
+            assert_eq!(fib(n as u32), val);
+        }
+    }
+}

@@ -1,0 +1,5 @@
+[workspace]
+resolver = "2"
+members = [
+    "day-1-morning/ex-1-fibonacci",
+]
